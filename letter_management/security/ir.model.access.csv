@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+letter_type_employee,letter.type - Employee,model_letter_type,base.group_user,1,1,1,1
+letter_type_all,letter.type - All,model_letter_type,,1,0,0,0
+letter_inbound_employee,letter.inbound - Employee,model_letter_inbound,base.group_user,1,1,1,1
+letter_inbound_all,letter.inbound - All,model_letter_inbound,,1,0,0,0
+letter_outbound_employee,letter.outbound - Employee,model_letter_outbound,base.group_user,1,1,1,1
+letter_outbound_all,letter.outbound - All,model_letter_outbound,,1,0,0,0

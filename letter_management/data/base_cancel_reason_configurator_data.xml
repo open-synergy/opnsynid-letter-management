@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="cancel_reason_letter_inbound" model="base.cancel.reason_config">
+            <field name="name" ref="letter_management.model_letter_inbound"/>
+            <field name="method_cancel_name">action_cancel</field>
+        </record>
+        <record id="cancel_reason_letter_outbound" model="base.cancel.reason_config">
+            <field name="name" ref="letter_management.model_letter_outbound"/>
+            <field name="method_cancel_name">action_cancel</field>
+        </record>
+    </data>
+</openerp>
