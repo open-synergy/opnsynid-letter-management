@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="base_workflow_letter_inbound" model="base.workflow_policy">
+    <field name="model_id" ref="letter_management.model_letter_inbound"/>
+</record>
+<record id="base_workflow_line_letter_inbound_confirm" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_inbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.inbound'),('name','=','confirm_ok')]"/>
+    <field name="python_code">result = document.type_id.inbound_confirm_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_inbound_done" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_inbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.inbound'),('name','=','done_ok')]"/>
+    <field name="python_code">result = document.type_id.inbound_finish_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_inbound_cancel" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_inbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.inbound'),('name','=','cancel_ok')]"/>
+    <field name="python_code">result = document.type_id.inbound_cancel_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_inbound_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_inbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.inbound'),('name','=','restart_ok')]"/>
+    <field name="python_code">result = document.type_id.inbound_restart_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_inbound_restart_validation" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_inbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.inbound'),('name','=','restart_approval_ok')]"/>
+    <field name="python_code">result = document.type_id.inbound_restart_validation_grp_ids.ids</field>
+</record>
+
+
+<record id="base_workflow_letter_outbound" model="base.workflow_policy">
+    <field name="model_id" ref="letter_management.model_letter_outbound"/>
+</record>
+<record id="base_workflow_line_letter_outbound_confirm" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_outbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.outbound'),('name','=','confirm_ok')]"/>
+    <field name="python_code">result = document.type_id.outbound_confirm_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_outbound_done" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_outbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.outbound'),('name','=','done_ok')]"/>
+    <field name="python_code">result = document.type_id.outbound_finish_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_outbound_cancel" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_outbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.outbound'),('name','=','cancel_ok')]"/>
+    <field name="python_code">result = document.type_id.outbound_cancel_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_outbound_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_outbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.outbound'),('name','=','restart_ok')]"/>
+    <field name="python_code">result = document.type_id.outbound_restart_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_letter_outbound_restart_validation" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="letter_management.base_workflow_letter_outbound"/>
+    <field name="field_id" search="[('model_id.model','=','letter.outbound'),('name','=','restart_approval_ok')]"/>
+    <field name="python_code">result = document.type_id.outbound_restart_validation_grp_ids.ids</field>
+</record>
+
+
+</data>
+</openerp>

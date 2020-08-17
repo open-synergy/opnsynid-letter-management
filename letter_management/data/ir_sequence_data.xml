@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="seq_type_letter_inbound" model="ir.sequence.type">
+    <field name="name">Inbound Letter</field>
+    <field name="code">letter.inbound</field>
+</record>
+
+<record id="seq_type_letter_outbound" model="ir.sequence.type">
+    <field name="name">Outbound Letter</field>
+    <field name="code">letter.outbound</field>
+</record>
+
+</data>
+
+<data noupdate="1">
+<record id="sequence_letter_inbound" model="ir.sequence">
+    <field name="name">Inbound Letter</field>
+    <field name="code">letter.inbound</field>
+    <field name="padding">6</field>
+    <field name="prefix">IN/%(year)s/</field>
+    <field eval="1" name="number_next"/>
+    <field eval="1" name="number_increment"/>
+</record>
+
+<record id="sequence_letter_outbound" model="ir.sequence">
+    <field name="name">Outbound Letter</field>
+    <field name="code">letter.outbound</field>
+    <field name="padding">6</field>
+    <field name="prefix">OUT/%(year)s/</field>
+    <field eval="1" name="number_next"/>
+    <field eval="1" name="number_increment"/>
+</record>
+</data>
+</openerp>
