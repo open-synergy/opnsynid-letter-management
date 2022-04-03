@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 <openerp>
 <data>
 
@@ -11,8 +10,8 @@
     <field name="model">letter.type</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="code"/>
+            <field name="name" />
+            <field name="code" />
         </tree>
     </field>
 </record>
@@ -22,8 +21,8 @@
     <field name="model">letter.type</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="code"/>
+            <field name="name" />
+            <field name="code" />
         </search>
     </field>
 </record>
@@ -33,39 +32,73 @@
     <field name="model">letter.type</field>
     <field name="arch" type="xml">
         <form>
-            <header/>
+            <header />
             <sheet>
-                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons"/>
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        />
                 <group name="group_1" colspan="4" col="2">
-                    <field name="name"/>
-                    <field name="code"/>
-                    <field name="active"/>
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="active" />
                 </group>
                 <notebook>
                     <page name="sequence" string="Sequence">
                         <group name="sequence_1" colspan="4" col="2">
-                            <field name="inbound_sequence_id"/>
-                            <field name="outbound_sequence_id"/>
+                            <field name="inbound_sequence_id" />
+                            <field name="outbound_sequence_id" />
                         </group>
                     </page>
                     <page name="workflow" string="Workflow">
                         <group name="workflow_1" string="Inbound" colspan="4" col="2">
-                            <field name="inbound_confirm_grp_ids" widget="many2many_tags"/>
-                            <field name="inbound_finish_grp_ids" widget="many2many_tags"/>
-                            <field name="inbound_cancel_grp_ids" widget="many2many_tags"/>
-                            <field name="inbound_restart_grp_ids" widget="many2many_tags"/>
-                            <field name="inbound_restart_validation_grp_ids" widget="many2many_tags"/>
+                            <field
+                                        name="inbound_confirm_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="inbound_finish_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="inbound_cancel_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="inbound_restart_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="inbound_restart_validation_grp_ids"
+                                        widget="many2many_tags"
+                                    />
                         </group>
                         <group name="workflow_2" string="Outbound" colspan="4" col="2">
-                            <field name="outbound_confirm_grp_ids" widget="many2many_tags"/>
-                            <field name="outbound_finish_grp_ids" widget="many2many_tags"/>
-                            <field name="outbound_cancel_grp_ids" widget="many2many_tags"/>
-                            <field name="outbound_restart_grp_ids" widget="many2many_tags"/>
-                            <field name="outbound_restart_validation_grp_ids" widget="many2many_tags"/>
+                            <field
+                                        name="outbound_confirm_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="outbound_finish_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="outbound_cancel_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="outbound_restart_grp_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field
+                                        name="outbound_restart_validation_grp_ids"
+                                        widget="many2many_tags"
+                                    />
                         </group>
                     </page>
                     <page name="note" string="Note">
-                        <field name="note"/>
+                        <field name="note" />
                     </page>
                 </notebook>
             </sheet>
@@ -79,16 +112,16 @@
     <field name="res_model">letter.type</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="letter_management.letter_type_view_search"/>
+    <field name="search_view_id" ref="letter_management.letter_type_view_search" />
 </record>
 
 <menuitem
-    id="letter_type_menu"
-    name="Letter Types"
-    parent="letter_configuration_menu"
-    action="letter_type_action"
-    sequence="1"
-    />
+            id="letter_type_menu"
+            name="Letter Types"
+            parent="letter_configuration_menu"
+            action="letter_type_action"
+            sequence="1"
+        />
 
 
 </data>

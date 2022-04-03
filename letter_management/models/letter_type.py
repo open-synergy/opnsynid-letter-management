@@ -1,29 +1,21 @@
 # -*- coding: utf-8 -*-
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class LetterType(models.Model):
     _name = "letter.type"
     _description = "Letter Type"
 
-    name = fields.Char(
-        string="Letter Type",
-        required=True
-    )
+    name = fields.Char(string="Letter Type", required=True)
     code = fields.Char(
         string="Code",
     )
-    note = fields.Text(
-        string="Note"
-    )
-    active = fields.Boolean(
-        string="Active",
-        default=True
-    )
+    note = fields.Text(string="Note")
+    active = fields.Boolean(string="Active", default=True)
     inbound_sequence_id = fields.Many2one(
         string="Inbound Sequence",
         comodel_name="ir.sequence",

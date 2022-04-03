@@ -1,41 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 <openerp>
 <data>
 
 <record id="letter_inbound_view_search" model="ir.ui.view">
     <field name="name">letter.inbound search</field>
     <field name="model">letter.inbound</field>
-    <field name="inherit_id" ref="letter_management.letter_common_view_search"/>
+    <field name="inherit_id" ref="letter_management.letter_common_view_search" />
     <field name="mode">primary</field>
-    <field name="priority" eval="25"/>
+    <field name="priority" eval="25" />
     <field name="arch" type="xml">
-        <data/>
+        <data />
     </field>
 </record>
 
 <record id="letter_inbound_view_tree" model="ir.ui.view">
     <field name="name">letter.inbound tree</field>
     <field name="model">letter.inbound</field>
-    <field name="inherit_id" ref="letter_management.letter_common_view_tree"/>
+    <field name="inherit_id" ref="letter_management.letter_common_view_tree" />
     <field name="mode">primary</field>
-    <field name="priority" eval="25"/>
+    <field name="priority" eval="25" />
     <field name="arch" type="xml">
-        <data/>
+        <data />
     </field>
 </record>
 
 <record id="letter_inbound_view_form" model="ir.ui.view">
     <field name="name">letter.inbound form</field>
     <field name="model">letter.inbound</field>
-    <field name="inherit_id" ref="letter_management.letter_common_view_form"/>
+    <field name="inherit_id" ref="letter_management.letter_common_view_form" />
     <field name="mode">primary</field>
-    <field name="priority" eval="25"/>
+    <field name="priority" eval="25" />
     <field name="arch" type="xml">
-        <data/>
+        <data />
     </field>
 </record>
 
@@ -45,16 +44,16 @@
     <field name="res_model">letter.inbound</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="letter_management.letter_inbound_view_search"/>
+    <field name="search_view_id" ref="letter_management.letter_inbound_view_search" />
 </record>
 
 <menuitem
-    id="letter_inbound_menu"
-    name="Inbounds"
-    parent="letter_menu"
-    action="letter_inbound_action"
-    sequence="1"
-    />
+            id="letter_inbound_menu"
+            name="Inbounds"
+            parent="letter_menu"
+            action="letter_inbound_action"
+            sequence="1"
+        />
 
 </data>
 </openerp>

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -389,9 +389,11 @@ class LetterCommon(models.AbstractModel):
     def create(self, values):
         _super = super(LetterCommon, self)
         result = _super.create(values)
-        result.write({
-            "number": result._create_sequence(),
-        })
+        result.write(
+            {
+                "number": result._create_sequence(),
+            }
+        )
         return result
 
     @api.multi
