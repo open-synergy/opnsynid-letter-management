@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Letter Management",
-    "version": "8.0.1.1.0",
+    "version": "8.0.1.2.0",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "LGPL-3",
@@ -17,7 +17,10 @@
         "base_multiple_approval",
     ],
     "data": [
+        "security/ir_module_category_data.xml",
+        "security/res_group_data.xml",
         "security/ir.model.access.csv",
+        "security/ir_rule_data.xml",
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
         "data/base_workflow_policy_data.xml",

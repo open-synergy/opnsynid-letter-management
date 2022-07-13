@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <!-- Workflow -->
+        <!-- Inbound -->
+        <record id="letter_inbound_viewer_group" model="res.groups">
+            <field name="name">Viewer</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_workflow_module_category"
+            />
+        </record>
+
+        <record id="letter_inbound_user_group" model="res.groups">
+            <field name="name">User</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_workflow_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_inbound_viewer_group'))]"
+            />
+        </record>
+
+        <record id="letter_inbound_validator_group" model="res.groups">
+            <field name="name">Validator</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_workflow_module_category"
+            />
+            <field name="implied_ids" eval="[(4, ref('letter_inbound_user_group'))]" />
+            <field name="users" eval="[(4, ref('base.user_root'))]" />
+        </record>
+        <!-- eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" -->
+
+        <!-- outbound -->
+        <record id="letter_outbound_viewer_group" model="res.groups">
+            <field name="name">Viewer</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_workflow_module_category"
+            />
+        </record>
+
+        <record id="letter_outbound_user_group" model="res.groups">
+            <field name="name">User</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_workflow_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_outbound_viewer_group'))]"
+            />
+        </record>
+
+        <record id="letter_outbound_validator_group" model="res.groups">
+            <field name="name">Validator</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_workflow_module_category"
+            />
+            <field name="implied_ids" eval="[(4, ref('letter_outbound_user_group'))]" />
+            <field name="users" eval="[(4, ref('base.user_root'))]" />
+        </record>
+        <!-- eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" -->
+
+
+        <!-- Data Ownership -->
+        <!-- Inbound -->
+        <record id="letter_inbound_own_data_group" model="res.groups">
+            <field name="name">Own Data</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_ownership_module_category"
+            />
+        </record>
+
+        <record id="letter_inbound_company_group" model="res.groups">
+            <field name="name">Company</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_ownership_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_inbound_own_data_group'))]"
+            />
+        </record>
+
+        <record id="letter_inbound_companies_group" model="res.groups">
+            <field name="name">Company and All Child Companies</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_ownership_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_inbound_company_group'))]"
+            />
+        </record>
+        <record id="letter_inbound_all_group" model="res.groups">
+            <field name="name">All</field>
+            <field
+                name="category_id"
+                ref="letter_inbound_data_ownership_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_inbound_companies_group'))]"
+            />
+                <field name="users" eval="[(4, ref('base.user_root'))]" />
+        </record>
+        <!-- eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" -->
+        <!-- outbound -->
+        <record id="letter_outbound_own_data_group" model="res.groups">
+            <field name="name">Own Data</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_ownership_module_category"
+            />
+        </record>
+
+        <record id="letter_outbound_company_group" model="res.groups">
+            <field name="name">Company</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_ownership_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_outbound_own_data_group'))]"
+            />
+        </record>
+
+        <record id="letter_outbound_companies_group" model="res.groups">
+            <field name="name">Company and All Child Companies</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_ownership_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_outbound_company_group'))]"
+            />
+        </record>
+        <record id="letter_outbound_all_group" model="res.groups">
+            <field name="name">All</field>
+            <field
+                name="category_id"
+                ref="letter_outbound_data_ownership_module_category"
+            />
+            <field
+                name="implied_ids"
+                eval="[(4, ref('letter_outbound_companies_group'))]"
+            />
+                <field name="users" eval="[(4, ref('base.user_root'))]" />
+        </record>
+        <!-- eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" -->
+
+    </data>
+</openerp>
