@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <!-- Workflow -->
+        <record
+            id="letter_inbound_data_workflow_module_category"
+            model="ir.module.category"
+        >
+            <field name="name">Letter Inbound Workflow</field>
+        </record>
+        <record
+            id="letter_outbound_data_workflow_module_category"
+            model="ir.module.category"
+        >
+            <field name="name">Letter Outbound Workflow</field>
+        </record>
+        <!-- Data Ownership -->
+        <record
+            id="letter_inbound_data_ownership_module_category"
+            model="ir.module.category"
+        >
+            <field name="name">Letter Inbound Ownership</field>
+        </record>
+        <record
+            id="letter_outbound_data_ownership_module_category"
+            model="ir.module.category"
+        >
+            <field name="name">Letter Outbound Ownership</field>
+        </record>
+
+    </data>
+</openerp>
